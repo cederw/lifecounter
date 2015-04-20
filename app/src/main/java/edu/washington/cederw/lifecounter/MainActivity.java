@@ -161,12 +161,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button10:
                 // do your code
                 p3++;
-                changeLife(R.id.textView6, p3);
+                changeLife(R.id.textView7, p3);
                 break;
             case R.id.button11:
                 // do your code
                 p3--;
-                changeLife(R.id.textView6, p3);
+                changeLife(R.id.textView7, p3);
                 if(p3<=0){
                     lose(res.getString(R.string.player3));
                 }
@@ -175,13 +175,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button12:
                 // do your code
                 p3+=5;
-                changeLife(R.id.textView6, p3);
+                changeLife(R.id.textView7, p3);
                 break;
 
             case R.id.button13:
                 // do your code
                 p3-=5;
-                changeLife(R.id.textView6, p3);
+                changeLife(R.id.textView7, p3);
                 if(p3<=0){
                     lose(res.getString(R.string.player3));
                 }
@@ -189,13 +189,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button14:
                 // do your code
                 p4++;
-                changeLife(R.id.textView7, p4);
+                changeLife(R.id.textView9, p4);
                 break;
 
             case R.id.button15:
                 // do your code
                 p4--;
-                changeLife(R.id.textView7, p4);
+                changeLife(R.id.textView9, p4);
                 if(p4<=0){
                     lose(res.getString(R.string.player4));
                 }
@@ -204,12 +204,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button16:
                 // do your code
                 p4+=5;
-                changeLife(R.id.textView7, p4);
+                changeLife(R.id.textView9, p4);
                 break;
             case R.id.button17:
                 // do your code
                 p4-=5;
-                changeLife(R.id.textView7, p4);
+                changeLife(R.id.textView9, p4);
                 if(p4<=0){
                     lose(res.getString(R.string.player4));
                 }
@@ -218,13 +218,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button18:
                 // do your code
                 p5++;
-                changeLife(R.id.textView8, p5);
+                changeLife(R.id.textView11, p5);
                 break;
 
             case R.id.button19:
                 // do your code
                 p5--;
-                changeLife(R.id.textView8, p5);
+                changeLife(R.id.textView11, p5);
                 if(p5<=0){
                     lose(res.getString(R.string.player5));
                 }
@@ -233,13 +233,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button20:
                 // do your code
                 p5+=5;
-                changeLife(R.id.textView8, p5);
+                changeLife(R.id.textView11, p5);
 
                 break;
             case R.id.button21:
                 // do your code
                 p5-=5;
-                changeLife(R.id.textView8, p5);
+                changeLife(R.id.textView11, p5);
                 if(p5<=0){
                     lose(res.getString(R.string.player5));
                 }
@@ -248,13 +248,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button22:
                 // do your code
                 p6++;
-                changeLife(R.id.textView9, p6);
+                changeLife(R.id.textView13, p6);
                 break;
 
             case R.id.button23:
                 // do your code
                 p6--;
-                changeLife(R.id.textView9, p6);
+                changeLife(R.id.textView13, p6);
                 if(p6<=0){
                     lose(res.getString(R.string.player6));
                 }
@@ -262,14 +262,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button24:
                 // do your code
                 p6+=5;
-                changeLife(R.id.textView9, p6);
+                changeLife(R.id.textView13, p6);
 
                 break;
 
             case R.id.button25:
                 // do your code
                 p6-=5;
-                changeLife(R.id.textView9, p6);
+                changeLife(R.id.textView13, p6);
                 if(p6<=0){
                     lose(res.getString(R.string.player6));
                 }
@@ -278,12 +278,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button26:
                 // do your code
                 p7++;
-                changeLife(R.id.textView10, p7);
+                changeLife(R.id.textView15, p7);
                 break;
             case R.id.button27:
                 // do your code
                 p7--;
-                changeLife(R.id.textView10, p7);
+                changeLife(R.id.textView15, p7);
                 if(p7<=0){
                     lose(res.getString(R.string.player7));
                 }
@@ -292,14 +292,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button28:
                 // do your code
                 p7+=5;
-                changeLife(R.id.textView10, p7);
+                changeLife(R.id.textView15, p7);
 
                 break;
 
             case R.id.button29:
                 // do your code
                 p7-=5;
-                changeLife(R.id.textView10, p7);
+                changeLife(R.id.textView15, p7);
                 if(p7<=0){
                     lose(res.getString(R.string.player7));
                 }
@@ -308,12 +308,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button30:
                 // do your code
                 p8++;
-                changeLife(R.id.textView11, p8);
+                changeLife(R.id.textView17, p8);
                 break;
             case R.id.button31:
                 // do your code
                 p8--;
-                changeLife(R.id.textView11, p8);
+                changeLife(R.id.textView17, p8);
                 if(p8<=0){
                     lose(res.getString(R.string.player8));
                 }
@@ -322,13 +322,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.button32:
                 // do your code
                 p8+=5;
-                changeLife(R.id.textView11, p8);
+                changeLife(R.id.textView17, p8);
                 break;
 
             case R.id.button33:
                 // do your code
                 p8-=5;
-                changeLife(R.id.textView11, p8);
+                changeLife(R.id.textView17, p8);
                 if(p8<=0){
                     lose(res.getString(R.string.player8));
                 }
