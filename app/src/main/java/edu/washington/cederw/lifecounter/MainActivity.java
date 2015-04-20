@@ -16,6 +16,8 @@ import android.widget.TextView;
 public class MainActivity extends Activity implements View.OnClickListener {
 
     private int playerCount = 2;
+
+    //i should have stored these in an array
     private int p1 = 20;
     private int p2 = 20;
     private int p3 = 20;
@@ -29,7 +31,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
+        //buttons for all 8 players
         Button add = (Button) findViewById(R.id.button);
         add.setOnClickListener(this); // calling onClick() method
         Button one = (Button) findViewById(R.id.button2);
@@ -114,6 +116,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     }
+
+    //please tell me there is a better way to have one event listener
     @Override
     public void onClick(View v) {
         // default method for handling onClick Events..
@@ -369,16 +373,19 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    //announce a loss
     private void lose(String player){
         TextView result = (TextView) findViewById(R.id.textView);
         result.setText(player +" LOSES");
     }
 
+    //update the life helper method
     private void changeLife(int id, int life){
         TextView result = (TextView) findViewById(id);
         result.setText(" Life: "+ life);
     }
 
+    //add a new player
     private void changePlayers(){
         switch(playerCount){
             case 2:
@@ -438,6 +445,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onRestoreInstanceState(Bundle savedInstanceState) {
 
+        //my code cant just set the number of players, you have to add them one by one x.x
         int pCount = savedInstanceState.getInt("playerCount");
         for(int i=2;i<pCount;i++){
             changePlayers();
