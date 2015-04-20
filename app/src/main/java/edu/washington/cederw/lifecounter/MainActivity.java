@@ -4,15 +4,18 @@ import android.app.Activity;
 import android.content.res.Resources;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
 
+    private int playerCount = 2;
     private int p1 = 20;
     private int p2 = 20;
     private int p3 = 20;
@@ -26,6 +29,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+        Button add = (Button) findViewById(R.id.button);
+        add.setOnClickListener(this); // calling onClick() method
         Button one = (Button) findViewById(R.id.button2);
         one.setOnClickListener(this); // calling onClick() method
         Button two = (Button) findViewById(R.id.button3);
@@ -91,6 +97,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Button thirtytwo = (Button) findViewById(R.id.button33);
         thirtytwo.setOnClickListener(this);
 
+        //hide the extra players
+
+        LinearLayout lThree = (LinearLayout) findViewById(R.id.three);
+        lThree.setVisibility(View.GONE);
+        lThree = (LinearLayout) findViewById(R.id.four);
+        lThree.setVisibility(View.GONE);
+        lThree = (LinearLayout) findViewById(R.id.five);
+        lThree.setVisibility(View.GONE);
+        lThree = (LinearLayout) findViewById(R.id.six);
+        lThree.setVisibility(View.GONE);
+        lThree = (LinearLayout) findViewById(R.id.seven);
+        lThree.setVisibility(View.GONE);
+        lThree = (LinearLayout) findViewById(R.id.eight);
+        lThree.setVisibility(View.GONE);
+
+
     }
     @Override
     public void onClick(View v) {
@@ -98,6 +120,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
         Resources res = getResources();
 
         switch (v.getId()) {
+
+            case R.id.button:
+                // do your code
+                if(playerCount>=8){
+                    break;
+                }
+                changePlayers();
+                break;
 
             case R.id.button2:
                 // do your code
@@ -349,5 +379,87 @@ public class MainActivity extends Activity implements View.OnClickListener {
         result.setText(" Life: "+ life);
     }
 
+    private void changePlayers(){
+        switch(playerCount){
+            case 2:
+                LinearLayout lThree = (LinearLayout) findViewById(R.id.three);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            case 3:
+                lThree = (LinearLayout) findViewById(R.id.four);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            case 4:
+                lThree = (LinearLayout) findViewById(R.id.five);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            case 5:
+                lThree = (LinearLayout) findViewById(R.id.six);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            case 6:
+                lThree = (LinearLayout) findViewById(R.id.seven);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            case 7:
+                lThree = (LinearLayout) findViewById(R.id.eight);
+                lThree.setVisibility(View.VISIBLE);
+                playerCount++;
+                break;
+            default:
+                break;
+
+        }
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        // Save UI state changes to the savedInstanceState.
+        // This bundle will be passed to onCreate if the process is
+        // killed and restarted.
+
+        savedInstanceState.putInt("playerCount", playerCount);
+        savedInstanceState.putInt("p1", p1);
+        savedInstanceState.putInt("p2", p2);
+        savedInstanceState.putInt("p3", p3);
+        savedInstanceState.putInt("p4", p4);
+        savedInstanceState.putInt("p5", p5);
+        savedInstanceState.putInt("p6", p6);
+        savedInstanceState.putInt("p7", p7);
+        savedInstanceState.putInt("p8", p8);
+    }
+
+    @Override
+    public void onRestoreInstanceState(Bundle savedInstanceState) {
+
+        int pCount = savedInstanceState.getInt("playerCount");
+        for(int i=2;i<pCount;i++){
+            changePlayers();
+        }
+
+        p1 = savedInstanceState.getInt("p1");
+        changeLife(R.id.textView4, p1);
+        p2 = savedInstanceState.getInt("p2");
+        changeLife(R.id.textView5, p2);
+        p3 = savedInstanceState.getInt("p3");
+        changeLife(R.id.textView7, p3);
+        p4 = savedInstanceState.getInt("p4");
+        changeLife(R.id.textView9, p4);
+        p5 = savedInstanceState.getInt("p5");
+        changeLife(R.id.textView11, p5);
+        p6 = savedInstanceState.getInt("p6");
+        changeLife(R.id.textView13, p6);
+        p7 = savedInstanceState.getInt("p7");
+        changeLife(R.id.textView15, p7);
+        p8 = savedInstanceState.getInt("p8");
+        changeLife(R.id.textView17, p8);
+
+    }
 
 }
